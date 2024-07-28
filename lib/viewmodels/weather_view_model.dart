@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app_flutter/models/weather.dart';
@@ -9,7 +10,9 @@ class WeatherViewModel {
   final String apiKey;
   final String baseUrl;
 
-  WeatherViewModel(this.apiKey, this.baseUrl);
+  WeatherViewModel()
+      : apiKey = dotenv.env['API_KEY']!,
+        baseUrl = dotenv.env['BASE_URL']!;
 
   // method to get weather by city name
   Future<Weather> getWeather(String cityName) async {
