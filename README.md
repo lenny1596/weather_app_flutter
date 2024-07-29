@@ -1,6 +1,6 @@
 # weather_app_flutter
 
-A new Flutter project.
+A Simple Weather App Built With Flutter & Dart.
 
 ## Getting Started
 
